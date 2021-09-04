@@ -1,0 +1,185 @@
+*,::before,::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    background: #091921;
+}
+
+body::before {
+    transform: rotate(-35deg) skew(20deg, 5deg);
+    -webkit-transform: rotate(-35deg) skew(20deg, 5deg);
+    content: '';
+    position: absolute;
+    top: -35rem;
+    right: 700px;
+    width: 1000px;
+    height: 1000px;
+    border-radius: 100%;
+    background: linear-gradient(#e91e63, #ffc107);
+}
+
+body::after {
+    transform: rotate(-35deg) skew(20deg, 5deg);
+    -webkit-transform: rotate(-35deg) skew(20deg, 5deg);
+    content: '';
+    position: absolute;
+    bottom: -35rem;
+    left: 700px;
+    width: 1000px;
+    height: 1000px;
+    border-radius: 100%;
+    background: linear-gradient(#da00ff, #fff);
+}
+
+form {
+    position: relative;
+    transform: rotate(-35deg) skew(20deg, 5deg);
+    -webkit-transform: rotate(-35deg) skew(20deg, 5deg);
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 1rem;
+    padding: 4rem 3rem 4rem 4rem;
+    border-radius: .5rem;
+    background: rgba(255, 255, 255, 0.05);
+    z-index: 10;
+    overflow: hidden;
+    backdrop-filter: blur(15px);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0, 0.2);
+}
+
+ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+input {
+    height: 4rem;
+    font-size: 1.75rem;
+    border-radius: .5rem;
+    outline: none;
+    padding: 0 1rem;
+    border: none;
+    background: transparent;
+    color: #fff;
+    letter-spacing: 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+button {
+    background: transparent;
+    color: #fff;
+    text-align: center;
+    font-size: 1.75rem;
+    line-height: 2.5rem;
+    height: 2.5rem;
+    width: 4rem;
+    border: none;
+    font-weight: 400;
+    position: relative;
+    display: block;
+    text-decoration: none;
+    user-select: none;
+    transition: all 250ms linear;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translate(0.9rem, -0.9rem);
+    -webkit-transform: translate(0.9rem, -0.9rem);
+    transition: all 250ms linear;
+}
+
+button:active {
+    background: #14ff47;
+    transform: translate(0.9rem, -0.9rem);
+    -webkit-transform: translate(0.9rem, -0.9rem);
+    transition: all 250ms linear;
+    font-weight: 500;
+}
+
+button:hover::before, button:hover::after {
+    transition: all 250ms linear;
+}
+
+button:hover::before {
+    background: rgba(255, 255, 255, 0.05);
+    width: 1rem;
+    top: 0.5rem;
+    left: -1rem;
+}
+
+button:hover::after {
+    background: rgba(255, 255, 255, 0.05);
+    width: 1rem;
+    bottom: -2.5rem;
+    left: 1rem;
+    height: 4rem;
+}
+
+button::before, button::after {
+    content: '';
+    position: absolute;
+    transition: all 250ms linear;
+    width: 0.5rem;
+}
+
+button::after {
+    height: 4rem;
+    background: transparent;
+    bottom: -2.25rem;
+    left: 1.5rem;
+    transform: rotate(90deg) skew(0, 45deg);
+    -webkit-transform: rotate(90deg) skew(0, 45deg);
+}
+
+button::before {
+    height: 2.5rem;
+    background: transparent;
+    top: 0.25rem;
+    left: -0.5rem;
+    transform: skewY(-45deg);
+    -webkit-transform: skewY(-45deg);
+}
+
+/* Active */
+
+button:active::before, button:active::after {
+    transition: all 250ms linear;
+}
+
+button:active::before {
+    background: #14ff47;
+    width: 1rem;
+    top: 0.5rem;
+    left: -1rem;
+}
+
+button:active::after {
+    background: #14ff47;
+    width: 1rem;
+    bottom: -2.5rem;
+    left: 1rem;
+    height: 4rem;
+}
